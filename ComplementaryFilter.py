@@ -40,7 +40,6 @@ class Complementary :
         self.angle = initialAngle
         self.lastT = 0
 
-
     ########################################################################
     #
     # 
@@ -58,7 +57,6 @@ class Complementary :
     #
     ########################################################################
     def filter(self, acc, gyro,t):
-        dt = (t-self.lastT) / 1000.0
         self.lastT=t
         self.angle = self.oneMinusAlpha*(self.angle + gyro * dt) + (self.alpha)*acc        
         return self.angle
